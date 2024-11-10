@@ -1,6 +1,6 @@
 package model;
 
-class Fauna extends Specie {
+class Fauna extends Species {
     private boolean migration;
     private double weightMax;
 
@@ -37,9 +37,6 @@ class Fauna extends Specie {
     }
 
     
-
-
-
     @Override
     public String toString() {
         return "Fauna" + "\nName:" + name + "\n Migration:" + migration + "\n ScientificName:" + scientificName

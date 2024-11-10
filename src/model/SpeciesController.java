@@ -2,10 +2,10 @@ package model;
 
 public class SpeciesController {
 
-	private Specie[] species;
+	private Species[] species;
 
 	public SpeciesController() {
-		species = new Specie[100];
+		species = new Species[100];
 
 	}
 
@@ -53,13 +53,13 @@ public class SpeciesController {
 		return false;
 	}
 
-	public String editFloraSpecies(String name, String newName, String cientificName, boolean flowes, boolean fruits,
+	public String editFloraSpecies(String name, String newName, String scientificName, boolean flowes, boolean fruits,
 			double maxheight) {
 		for (int i = 0; i < species.length; i++) {
 			if (species[i] instanceof Flora && species[i].getName().equalsIgnoreCase(name)) {
 				Flora floraToEdit = (Flora) species[i];
 				floraToEdit.setName(newName);
-				floraToEdit.setCientificName(cientificName);
+				floraToEdit.setCientificName(scientificName);
 				floraToEdit.setFlowes(flowes);
 				floraToEdit.setFruits(fruits);
 				floraToEdit.setMaxHeight(maxheight);
@@ -69,14 +69,14 @@ public class SpeciesController {
 		return null;
 	}
 
-	public String editFaunaSpecies(String name, String newName, String cientificName, boolean migration,
+	public String editFaunaSpecies(String name, String newName, String scientificName, boolean migration,
 			double weightMax) {
 		for (int i = 0; i < species.length; i++) {
 			if (species[i] instanceof Fauna && species[i].getName().equalsIgnoreCase(name)) {
 				Fauna faunaToEdit = (Fauna) species[i];
 				// Actualiza los atributos de la especie de fauna
 				faunaToEdit.setName(newName);
-				faunaToEdit.setCientificName(cientificName);
+				faunaToEdit.setCientificName(scientificName);
 				faunaToEdit.setMigration(migration);
 				faunaToEdit.setWeightMax(weightMax);
 				return "Especie de fauna editada exitosamente.";
@@ -92,7 +92,7 @@ public class SpeciesController {
 			return "Species array is not initialized.";
 		}
 	
-		for (Specie especie : species) {
+		for (Species especie : species) {
 			if (especie != null && especie.getName().equalsIgnoreCase(name)) {
 				return especie.toString(); // Llama a toString() del objeto encontrado
 			}
@@ -105,7 +105,7 @@ public class SpeciesController {
 		StringBuilder floraList = new StringBuilder();
 		StringBuilder faunaList = new StringBuilder();
 
-		for (Specie especie : species) {
+		for (Species especie : species) {
 			if (especie instanceof Flora) {
 				floraList.append(especie.getName()).append(" (").append(especie.getCientificName()).append(")\n");
 			} else if (especie instanceof Fauna) {
@@ -127,7 +127,7 @@ public class SpeciesController {
 	public String showFloraSpeciesList() {
 		StringBuilder floraList = new StringBuilder();
 
-		for (Specie especie : species) {
+		for (Species especie : species) {
 			if (especie instanceof Flora) {
 				floraList.append(especie.getName())
 						.append(" (")
@@ -146,7 +146,7 @@ public class SpeciesController {
 	public String showFaunaSpeciesList() {
 		StringBuilder faunaList = new StringBuilder();
 
-		for (Specie especie : species) {
+		for (Species especie : species) {
 			if (especie instanceof Fauna) {
 				faunaList.append(especie.getName())
 						.append(" (")

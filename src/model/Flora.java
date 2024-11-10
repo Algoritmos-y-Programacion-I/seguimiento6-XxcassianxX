@@ -1,6 +1,6 @@
 package model;
 
-class Flora extends Specie {
+class Flora extends Species {
     private boolean flowers;
     private boolean fruits;
     private double maxheight;

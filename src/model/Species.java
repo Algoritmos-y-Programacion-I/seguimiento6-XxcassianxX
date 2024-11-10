@@ -1,10 +1,10 @@
 package model;
 
-abstract class Specie {
+abstract class Species {
 	protected String name;
 	protected String scientificName;
 
-	public Specie(String name, String scientificName) {
+	public Species(String name, String scientificName) {
 		this.name = name;
 		this.scientificName = scientificName;
 	}
@@ -21,8 +21,8 @@ abstract class Specie {
 		this.name = name;
 	}
 
-	public void setCientificName(String cientificName) {
-		this.scientificName = cientificName;
+	public void setCientificName(String scientificName) {
+		this.scientificName = scientificName;
 	}
 
 	public abstract void showDetail(); // Método abstracto para mostrar detalles específicos
